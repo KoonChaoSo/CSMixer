@@ -19,3 +19,4 @@
 @property (strong, nonatomic) NSData *pps; //H.264中另一重要的参数集合为图像参数集Picture Paramater Set(PPS)。
 @end
 
+

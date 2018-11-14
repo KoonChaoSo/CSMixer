@@ -10,7 +10,6 @@
 		A1570F7A219BC0E3009819E1 /* CSVideoFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1570F79219BC0E3009819E1 /* CSVideoFrameModel.m */; };
 		A1570F7D219BC24F009819E1 /* CSAudioFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1570F7C219BC24F009819E1 /* CSAudioFrameModel.m */; };
 		D80BD4D0213D7FF70029FCFC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */; };
-		D82C9766211FDDF000F2B3FB /* CSFrameVideoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D82C9765211FDDF000F2B3FB /* CSFrameVideoInfo.m */; };
 		D858FA962108D3A1002EA718 /* CSVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D858FA952108D3A1002EA718 /* CSVideoEncoder.m */; };
 		D858FA992108D4E9002EA718 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D858FA982108D4E9002EA718 /* VideoToolbox.framework */; };
 		D86A1318211895EA00B3D35C /* CSRtmpPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86A1317211895EA00B3D35C /* CSRtmpPushManager.m */; };
@@ -36,8 +35,6 @@
 		A1570F7B219BC24F009819E1 /* CSAudioFrameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAudioFrameModel.h; sourceTree = "<group>"; };
 		A1570F7C219BC24F009819E1 /* CSAudioFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAudioFrameModel.m; sourceTree = "<group>"; };
 		D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D82C9764211FDDF000F2B3FB /* CSFrameVideoInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSFrameVideoInfo.h; sourceTree = "<group>"; };
-		D82C9765211FDDF000F2B3FB /* CSFrameVideoInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSFrameVideoInfo.m; sourceTree = "<group>"; };
 		D858FA942108D3A1002EA718 /* CSVideoEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVideoEncoder.h; sourceTree = "<group>"; };
 		D858FA952108D3A1002EA718 /* CSVideoEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVideoEncoder.m; sourceTree = "<group>"; };
 		D858FA982108D4E9002EA718 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -88,6 +85,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A134F202219C09B500111C10 /* Collector */ = {
+			isa = PBXGroup;
+			children = (
+				D8E5382021076FC900B6AB9D /* CSMixerCollector.h */,
+				D8E5382121076FC900B6AB9D /* CSMixerCollector.m */,
+			);
+			path = Collector;
+			sourceTree = "<group>";
+		};
+		A134F203219C09C400111C10 /* Encoder */ = {
+			isa = PBXGroup;
+			children = (
+				D858FA942108D3A1002EA718 /* CSVideoEncoder.h */,
+				D858FA952108D3A1002EA718 /* CSVideoEncoder.m */,
+				D89F8E0A218B513700778D5B /* CSAacAudioEncoder.h */,
+				D89F8E09218B513700778D5B /* CSAacAudioEncoder.m */,
+			);
+			path = Encoder;
+			sourceTree = "<group>";
+		};
+		A134F204219C09E800111C10 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				D86A1316211895EA00B3D35C /* CSRtmpPushManager.h */,
+				D86A1317211895EA00B3D35C /* CSRtmpPushManager.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
 		A1570F77219BC0C0009819E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,20 +134,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D86A12B4211890BC00B3D35C /* clibs */ = {
-			isa = PBXGroup;
-			children = (
-				D86A12D8211890BC00B3D35C /* 3th-party */,
-			);
-			path = clibs;
-			sourceTree = "<group>";
-		};
-		D86A12D8211890BC00B3D35C /* 3th-party */ = {
+		D86A12B4211890BC00B3D35C /* RTMPLib */ = {
 			isa = PBXGroup;
 			children = (
 				D8A296972125C803002F88A8 /* pili-librtmp */,
 			);
-			path = "3th-party";
+			path = RTMPLib;
 			sourceTree = "<group>";
 		};
 		D8A296972125C803002F88A8 /* pili-librtmp */ = {
@@ -176,10 +194,11 @@
 		D8E5380921076F4100B6AB9D /* CSMixer */ = {
 			isa = PBXGroup;
 			children = (
+				A134F204219C09E800111C10 /* Push */,
+				A134F203219C09C400111C10 /* Encoder */,
+				A134F202219C09B500111C10 /* Collector */,
 				A1570F77219BC0C0009819E1 /* Model */,
-				D89F8E0A218B513700778D5B /* CSAacAudioEncoder.h */,
-				D89F8E09218B513700778D5B /* CSAacAudioEncoder.m */,
-				D86A12B4211890BC00B3D35C /* clibs */,
+				D86A12B4211890BC00B3D35C /* RTMPLib */,
 				D8E5380A21076F4100B6AB9D /* AppDelegate.h */,
 				D8E5380B21076F4100B6AB9D /* AppDelegate.m */,
 				D8E5380D21076F4100B6AB9D /* ViewController.h */,
@@ -189,14 +208,6 @@
 				D8E5381521076F4200B6AB9D /* LaunchScreen.storyboard */,
 				D8E5381821076F4200B6AB9D /* Info.plist */,
 				D8E5381921076F4200B6AB9D /* main.m */,
-				D8E5382021076FC900B6AB9D /* CSMixerCollector.h */,
-				D8E5382121076FC900B6AB9D /* CSMixerCollector.m */,
-				D858FA942108D3A1002EA718 /* CSVideoEncoder.h */,
-				D858FA952108D3A1002EA718 /* CSVideoEncoder.m */,
-				D86A1316211895EA00B3D35C /* CSRtmpPushManager.h */,
-				D86A1317211895EA00B3D35C /* CSRtmpPushManager.m */,
-				D82C9764211FDDF000F2B3FB /* CSFrameVideoInfo.h */,
-				D82C9765211FDDF000F2B3FB /* CSFrameVideoInfo.m */,
 			);
 			path = CSMixer;
 			sourceTree = "<group>";
@@ -278,7 +289,6 @@
 				D8E5380F21076F4100B6AB9D /* ViewController.m in Sources */,
 				D8E5381A21076F4200B6AB9D /* main.m in Sources */,
 				D858FA962108D3A1002EA718 /* CSVideoEncoder.m in Sources */,
-				D82C9766211FDDF000F2B3FB /* CSFrameVideoInfo.m in Sources */,
 				D8A296AC2125C803002F88A8 /* error.c in Sources */,
 				D86A1318211895EA00B3D35C /* CSRtmpPushManager.m in Sources */,
 				D8E5380C21076F4100B6AB9D /* AppDelegate.m in Sources */,
