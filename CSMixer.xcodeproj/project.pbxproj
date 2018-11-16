@@ -7,33 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CE816EBEAC40492CF11E9A8 /* libPods-CSMixer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9368EBA5D60366DC56BD7C /* libPods-CSMixer.a */; };
+		A1429463219E607F00261174 /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = A1429453219E607F00261174 /* log.c */; };
+		A1429464219E607F00261174 /* hashswf.c in Sources */ = {isa = PBXBuildFile; fileRef = A142945A219E607F00261174 /* hashswf.c */; };
+		A1429465219E607F00261174 /* rtmp.c in Sources */ = {isa = PBXBuildFile; fileRef = A142945B219E607F00261174 /* rtmp.c */; };
+		A1429466219E607F00261174 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = A142945D219E607F00261174 /* error.c */; };
+		A1429467219E607F00261174 /* parseurl.c in Sources */ = {isa = PBXBuildFile; fileRef = A1429460219E607F00261174 /* parseurl.c */; };
+		A1429468219E607F00261174 /* amf.c in Sources */ = {isa = PBXBuildFile; fileRef = A1429461219E607F00261174 /* amf.c */; };
+		A142946B219E62C700261174 /* CSMixerGPUImageCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = A142946A219E62C700261174 /* CSMixerGPUImageCollector.m */; };
+		A1429471219EAE8100261174 /* CSMixerGPUImageCarmera.m in Sources */ = {isa = PBXBuildFile; fileRef = A1429470219EAE8100261174 /* CSMixerGPUImageCarmera.m */; };
 		A1570F7A219BC0E3009819E1 /* CSVideoFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1570F79219BC0E3009819E1 /* CSVideoFrameModel.m */; };
 		A1570F7D219BC24F009819E1 /* CSAudioFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1570F7C219BC24F009819E1 /* CSAudioFrameModel.m */; };
+		A199522F219EB9C5000BF205 /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A199522D219EB9C4000BF205 /* GPUImageBeautifyFilter.m */; };
 		D80BD4D0213D7FF70029FCFC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */; };
 		D858FA962108D3A1002EA718 /* CSVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D858FA952108D3A1002EA718 /* CSVideoEncoder.m */; };
 		D858FA992108D4E9002EA718 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D858FA982108D4E9002EA718 /* VideoToolbox.framework */; };
 		D86A1318211895EA00B3D35C /* CSRtmpPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D86A1317211895EA00B3D35C /* CSRtmpPushManager.m */; };
 		D89F8E0B218B513700778D5B /* CSAacAudioEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D89F8E09218B513700778D5B /* CSAacAudioEncoder.m */; };
-		D8A296A92125C803002F88A8 /* log.c in Sources */ = {isa = PBXBuildFile; fileRef = D8A296992125C803002F88A8 /* log.c */; };
-		D8A296AA2125C803002F88A8 /* hashswf.c in Sources */ = {isa = PBXBuildFile; fileRef = D8A296A02125C803002F88A8 /* hashswf.c */; };
-		D8A296AB2125C803002F88A8 /* rtmp.c in Sources */ = {isa = PBXBuildFile; fileRef = D8A296A12125C803002F88A8 /* rtmp.c */; };
-		D8A296AC2125C803002F88A8 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = D8A296A32125C803002F88A8 /* error.c */; };
-		D8A296AD2125C803002F88A8 /* parseurl.c in Sources */ = {isa = PBXBuildFile; fileRef = D8A296A62125C803002F88A8 /* parseurl.c */; };
-		D8A296AE2125C803002F88A8 /* amf.c in Sources */ = {isa = PBXBuildFile; fileRef = D8A296A72125C803002F88A8 /* amf.c */; };
 		D8E5380C21076F4100B6AB9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5380B21076F4100B6AB9D /* AppDelegate.m */; };
 		D8E5380F21076F4100B6AB9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5380E21076F4100B6AB9D /* ViewController.m */; };
 		D8E5381221076F4100B6AB9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E5381021076F4100B6AB9D /* Main.storyboard */; };
 		D8E5381421076F4200B6AB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E5381321076F4200B6AB9D /* Assets.xcassets */; };
 		D8E5381721076F4200B6AB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E5381521076F4200B6AB9D /* LaunchScreen.storyboard */; };
 		D8E5381A21076F4200B6AB9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5381921076F4200B6AB9D /* main.m */; };
-		D8E5382221076FC900B6AB9D /* CSMixerCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5382121076FC900B6AB9D /* CSMixerCollector.m */; };
+		D8E5382221076FC900B6AB9D /* CSMixerAVFoundationCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E5382121076FC900B6AB9D /* CSMixerAVFoundationCollector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E9368EBA5D60366DC56BD7C /* libPods-CSMixer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSMixer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6281E0EAC7177425C23648 /* Pods-CSMixer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSMixer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSMixer/Pods-CSMixer.debug.xcconfig"; sourceTree = "<group>"; };
+		A1429453219E607F00261174 /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = log.c; sourceTree = "<group>"; };
+		A1429454219E607F00261174 /* error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
+		A1429455219E607F00261174 /* http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http.h; sourceTree = "<group>"; };
+		A1429456219E607F00261174 /* handshake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = handshake.h; sourceTree = "<group>"; };
+		A1429457219E607F00261174 /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
+		A1429458219E607F00261174 /* dhgroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dhgroups.h; sourceTree = "<group>"; };
+		A1429459219E607F00261174 /* rtmp_sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp_sys.h; sourceTree = "<group>"; };
+		A142945A219E607F00261174 /* hashswf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashswf.c; sourceTree = "<group>"; };
+		A142945B219E607F00261174 /* rtmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtmp.c; sourceTree = "<group>"; };
+		A142945C219E607F00261174 /* amf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amf.h; sourceTree = "<group>"; };
+		A142945D219E607F00261174 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
+		A142945E219E607F00261174 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
+		A142945F219E607F00261174 /* bytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bytes.h; sourceTree = "<group>"; };
+		A1429460219E607F00261174 /* parseurl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parseurl.c; sourceTree = "<group>"; };
+		A1429461219E607F00261174 /* amf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amf.c; sourceTree = "<group>"; };
+		A1429462219E607F00261174 /* rtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp.h; sourceTree = "<group>"; };
+		A1429469219E62C700261174 /* CSMixerGPUImageCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMixerGPUImageCollector.h; sourceTree = "<group>"; };
+		A142946A219E62C700261174 /* CSMixerGPUImageCollector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMixerGPUImageCollector.m; sourceTree = "<group>"; };
+		A142946C219E62E900261174 /* CSMixerCollectorProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMixerCollectorProtocol.h; sourceTree = "<group>"; };
+		A142946D219E639100261174 /* CSMixerAVFoundationCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMixerAVFoundationCollector.h; sourceTree = "<group>"; };
+		A142946F219EAE8100261174 /* CSMixerGPUImageCarmera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMixerGPUImageCarmera.h; sourceTree = "<group>"; };
+		A1429470219EAE8100261174 /* CSMixerGPUImageCarmera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMixerGPUImageCarmera.m; sourceTree = "<group>"; };
 		A1570F78219BC0E3009819E1 /* CSVideoFrameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVideoFrameModel.h; sourceTree = "<group>"; };
 		A1570F79219BC0E3009819E1 /* CSVideoFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVideoFrameModel.m; sourceTree = "<group>"; };
 		A1570F7B219BC24F009819E1 /* CSAudioFrameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAudioFrameModel.h; sourceTree = "<group>"; };
 		A1570F7C219BC24F009819E1 /* CSAudioFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAudioFrameModel.m; sourceTree = "<group>"; };
+		A199522D219EB9C4000BF205 /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
+		A199522E219EB9C5000BF205 /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 		D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D858FA942108D3A1002EA718 /* CSVideoEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVideoEncoder.h; sourceTree = "<group>"; };
 		D858FA952108D3A1002EA718 /* CSVideoEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVideoEncoder.m; sourceTree = "<group>"; };
@@ -42,22 +72,6 @@
 		D86A1317211895EA00B3D35C /* CSRtmpPushManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRtmpPushManager.m; sourceTree = "<group>"; };
 		D89F8E09218B513700778D5B /* CSAacAudioEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAacAudioEncoder.m; sourceTree = "<group>"; };
 		D89F8E0A218B513700778D5B /* CSAacAudioEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAacAudioEncoder.h; sourceTree = "<group>"; };
-		D8A296992125C803002F88A8 /* log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = log.c; sourceTree = "<group>"; };
-		D8A2969A2125C803002F88A8 /* error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = error.h; sourceTree = "<group>"; };
-		D8A2969B2125C803002F88A8 /* http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = http.h; sourceTree = "<group>"; };
-		D8A2969C2125C803002F88A8 /* handshake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = handshake.h; sourceTree = "<group>"; };
-		D8A2969D2125C803002F88A8 /* dh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dh.h; sourceTree = "<group>"; };
-		D8A2969E2125C803002F88A8 /* dhgroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dhgroups.h; sourceTree = "<group>"; };
-		D8A2969F2125C803002F88A8 /* rtmp_sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp_sys.h; sourceTree = "<group>"; };
-		D8A296A02125C803002F88A8 /* hashswf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashswf.c; sourceTree = "<group>"; };
-		D8A296A12125C803002F88A8 /* rtmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rtmp.c; sourceTree = "<group>"; };
-		D8A296A22125C803002F88A8 /* amf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amf.h; sourceTree = "<group>"; };
-		D8A296A32125C803002F88A8 /* error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = error.c; sourceTree = "<group>"; };
-		D8A296A42125C803002F88A8 /* log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log.h; sourceTree = "<group>"; };
-		D8A296A52125C803002F88A8 /* bytes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bytes.h; sourceTree = "<group>"; };
-		D8A296A62125C803002F88A8 /* parseurl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = parseurl.c; sourceTree = "<group>"; };
-		D8A296A72125C803002F88A8 /* amf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amf.c; sourceTree = "<group>"; };
-		D8A296A82125C803002F88A8 /* rtmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rtmp.h; sourceTree = "<group>"; };
 		D8E5380721076F4100B6AB9D /* CSMixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSMixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E5380A21076F4100B6AB9D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8E5380B21076F4100B6AB9D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,8 +82,8 @@
 		D8E5381621076F4200B6AB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8E5381821076F4200B6AB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E5381921076F4200B6AB9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D8E5382021076FC900B6AB9D /* CSMixerCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMixerCollector.h; sourceTree = "<group>"; };
-		D8E5382121076FC900B6AB9D /* CSMixerCollector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMixerCollector.m; sourceTree = "<group>"; };
+		D8E5382121076FC900B6AB9D /* CSMixerAVFoundationCollector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMixerAVFoundationCollector.m; sourceTree = "<group>"; };
+		F7CEE9BA4E5416EBEF7FF314 /* Pods-CSMixer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSMixer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSMixer/Pods-CSMixer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,17 +93,34 @@
 			files = (
 				D80BD4D0213D7FF70029FCFC /* AudioToolbox.framework in Frameworks */,
 				D858FA992108D4E9002EA718 /* VideoToolbox.framework in Frameworks */,
+				9CE816EBEAC40492CF11E9A8 /* libPods-CSMixer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB70127DDE9ED2EBBB58D8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A6281E0EAC7177425C23648 /* Pods-CSMixer.debug.xcconfig */,
+				F7CEE9BA4E5416EBEF7FF314 /* Pods-CSMixer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A134F202219C09B500111C10 /* Collector */ = {
 			isa = PBXGroup;
 			children = (
-				D8E5382021076FC900B6AB9D /* CSMixerCollector.h */,
-				D8E5382121076FC900B6AB9D /* CSMixerCollector.m */,
+				A199522E219EB9C5000BF205 /* GPUImageBeautifyFilter.h */,
+				A199522D219EB9C4000BF205 /* GPUImageBeautifyFilter.m */,
+				A142946D219E639100261174 /* CSMixerAVFoundationCollector.h */,
+				D8E5382121076FC900B6AB9D /* CSMixerAVFoundationCollector.m */,
+				A1429469219E62C700261174 /* CSMixerGPUImageCollector.h */,
+				A142946A219E62C700261174 /* CSMixerGPUImageCollector.m */,
+				A142946C219E62E900261174 /* CSMixerCollectorProtocol.h */,
+				A142946F219EAE8100261174 /* CSMixerGPUImageCarmera.h */,
+				A1429470219EAE8100261174 /* CSMixerGPUImageCarmera.m */,
 			);
 			path = Collector;
 			sourceTree = "<group>";
@@ -114,6 +145,37 @@
 			path = Push;
 			sourceTree = "<group>";
 		};
+		A1429451219E607F00261174 /* pili-librtmp */ = {
+			isa = PBXGroup;
+			children = (
+				A1429452219E607F00261174 /* pili-librtmp */,
+			);
+			path = "pili-librtmp";
+			sourceTree = "<group>";
+		};
+		A1429452219E607F00261174 /* pili-librtmp */ = {
+			isa = PBXGroup;
+			children = (
+				A1429453219E607F00261174 /* log.c */,
+				A1429454219E607F00261174 /* error.h */,
+				A1429455219E607F00261174 /* http.h */,
+				A1429456219E607F00261174 /* handshake.h */,
+				A1429457219E607F00261174 /* dh.h */,
+				A1429458219E607F00261174 /* dhgroups.h */,
+				A1429459219E607F00261174 /* rtmp_sys.h */,
+				A142945A219E607F00261174 /* hashswf.c */,
+				A142945B219E607F00261174 /* rtmp.c */,
+				A142945C219E607F00261174 /* amf.h */,
+				A142945D219E607F00261174 /* error.c */,
+				A142945E219E607F00261174 /* log.h */,
+				A142945F219E607F00261174 /* bytes.h */,
+				A1429460219E607F00261174 /* parseurl.c */,
+				A1429461219E607F00261174 /* amf.c */,
+				A1429462219E607F00261174 /* rtmp.h */,
+			);
+			path = "pili-librtmp";
+			sourceTree = "<group>";
+		};
 		A1570F77219BC0C0009819E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +192,7 @@
 			children = (
 				D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */,
 				D858FA982108D4E9002EA718 /* VideoToolbox.framework */,
+				2E9368EBA5D60366DC56BD7C /* libPods-CSMixer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,41 +200,9 @@
 		D86A12B4211890BC00B3D35C /* RTMPLib */ = {
 			isa = PBXGroup;
 			children = (
-				D8A296972125C803002F88A8 /* pili-librtmp */,
+				A1429451219E607F00261174 /* pili-librtmp */,
 			);
 			path = RTMPLib;
-			sourceTree = "<group>";
-		};
-		D8A296972125C803002F88A8 /* pili-librtmp */ = {
-			isa = PBXGroup;
-			children = (
-				D8A296982125C803002F88A8 /* pili-librtmp */,
-			);
-			name = "pili-librtmp";
-			path = "CSMixer/clibs/pili-librtmp";
-			sourceTree = SOURCE_ROOT;
-		};
-		D8A296982125C803002F88A8 /* pili-librtmp */ = {
-			isa = PBXGroup;
-			children = (
-				D8A296A72125C803002F88A8 /* amf.c */,
-				D8A296A22125C803002F88A8 /* amf.h */,
-				D8A296A52125C803002F88A8 /* bytes.h */,
-				D8A2969D2125C803002F88A8 /* dh.h */,
-				D8A2969E2125C803002F88A8 /* dhgroups.h */,
-				D8A296A32125C803002F88A8 /* error.c */,
-				D8A2969A2125C803002F88A8 /* error.h */,
-				D8A2969C2125C803002F88A8 /* handshake.h */,
-				D8A296A02125C803002F88A8 /* hashswf.c */,
-				D8A2969B2125C803002F88A8 /* http.h */,
-				D8A296992125C803002F88A8 /* log.c */,
-				D8A296A42125C803002F88A8 /* log.h */,
-				D8A296A62125C803002F88A8 /* parseurl.c */,
-				D8A2969F2125C803002F88A8 /* rtmp_sys.h */,
-				D8A296A12125C803002F88A8 /* rtmp.c */,
-				D8A296A82125C803002F88A8 /* rtmp.h */,
-			);
-			path = "pili-librtmp";
 			sourceTree = "<group>";
 		};
 		D8E537FE21076F4100B6AB9D = {
@@ -180,6 +211,7 @@
 				D8E5380921076F4100B6AB9D /* CSMixer */,
 				D8E5380821076F4100B6AB9D /* Products */,
 				D858FA972108D4E9002EA718 /* Frameworks */,
+				0BB70127DDE9ED2EBBB58D8E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8E5381D21076F4200B6AB9D /* Build configuration list for PBXNativeTarget "CSMixer" */;
 			buildPhases = (
+				8D65FE33C947C9D0D293D428 /* [CP] Check Pods Manifest.lock */,
 				D8E5380321076F4100B6AB9D /* Sources */,
 				D8E5380421076F4100B6AB9D /* Frameworks */,
 				D8E5380521076F4100B6AB9D /* Resources */,
+				157103D34D7357FA537959C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,26 +311,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		157103D34D7357FA537959C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CSMixer/Pods-CSMixer-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CSMixer/Pods-CSMixer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D65FE33C947C9D0D293D428 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CSMixer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8E5380321076F4100B6AB9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A296AB2125C803002F88A8 /* rtmp.c in Sources */,
-				D8A296AD2125C803002F88A8 /* parseurl.c in Sources */,
 				A1570F7D219BC24F009819E1 /* CSAudioFrameModel.m in Sources */,
-				D8A296A92125C803002F88A8 /* log.c in Sources */,
 				D8E5380F21076F4100B6AB9D /* ViewController.m in Sources */,
+				A1429471219EAE8100261174 /* CSMixerGPUImageCarmera.m in Sources */,
+				A1429465219E607F00261174 /* rtmp.c in Sources */,
+				A1429466219E607F00261174 /* error.c in Sources */,
+				A1429463219E607F00261174 /* log.c in Sources */,
 				D8E5381A21076F4200B6AB9D /* main.m in Sources */,
+				A142946B219E62C700261174 /* CSMixerGPUImageCollector.m in Sources */,
 				D858FA962108D3A1002EA718 /* CSVideoEncoder.m in Sources */,
-				D8A296AC2125C803002F88A8 /* error.c in Sources */,
+				A199522F219EB9C5000BF205 /* GPUImageBeautifyFilter.m in Sources */,
 				D86A1318211895EA00B3D35C /* CSRtmpPushManager.m in Sources */,
+				A1429464219E607F00261174 /* hashswf.c in Sources */,
+				A1429468219E607F00261174 /* amf.c in Sources */,
 				D8E5380C21076F4100B6AB9D /* AppDelegate.m in Sources */,
-				D8A296AE2125C803002F88A8 /* amf.c in Sources */,
-				D8E5382221076FC900B6AB9D /* CSMixerCollector.m in Sources */,
-				D8A296AA2125C803002F88A8 /* hashswf.c in Sources */,
+				D8E5382221076FC900B6AB9D /* CSMixerAVFoundationCollector.m in Sources */,
 				D89F8E0B218B513700778D5B /* CSAacAudioEncoder.m in Sources */,
 				A1570F7A219BC0E3009819E1 /* CSVideoFrameModel.m in Sources */,
+				A1429467219E607F00261174 /* parseurl.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +526,7 @@
 		};
 		D8E5381E21076F4200B6AB9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A6281E0EAC7177425C23648 /* Pods-CSMixer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +551,7 @@
 		};
 		D8E5381F21076F4200B6AB9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7CEE9BA4E5416EBEF7FF314 /* Pods-CSMixer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

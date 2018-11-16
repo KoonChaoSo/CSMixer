@@ -10,7 +10,6 @@
 #import "rtmp.h"
 #import "CSVideoFrameModel.h"
 #import "CSAudioFrameModel.h"
-#import "CSFrameVideoInfo.h"
 #define RTMP_HEAD_SIZE (sizeof(RTMPPacket)+RTMP_MAX_HEADER_SIZE)
 
 
@@ -147,14 +146,14 @@ static CSRtmpPushManager* shareInstace = nil;
     enc = AMF_EncodeNamedNumber(enc, pend, &av_fileSize,        0.0);
 
     // videosize
-    enc = AMF_EncodeNamedNumber(enc, pend, &av_width,           320);
-    enc = AMF_EncodeNamedNumber(enc, pend, &av_height,          480);
+    enc = AMF_EncodeNamedNumber(enc, pend, &av_width,           480);
+    enc = AMF_EncodeNamedNumber(enc, pend, &av_height,          640);
 
     // video
     enc = AMF_EncodeNamedString(enc, pend, &av_videocodecid,    &av_avc1);
-
-    enc = AMF_EncodeNamedNumber(enc, pend, &av_videodatarate,   320 * 480 / 1000.f);
-    enc = AMF_EncodeNamedNumber(enc, pend, &av_framerate,       15);
+//640x480
+    enc = AMF_EncodeNamedNumber(enc, pend, &av_videodatarate,   480 * 640 / 1000.f);
+    enc = AMF_EncodeNamedNumber(enc, pend, &av_framerate,       20);
 
     // audio
     enc = AMF_EncodeNamedString(enc, pend, &av_audiocodecid,    &av_mp4a);

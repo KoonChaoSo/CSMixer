@@ -92,7 +92,7 @@ typedef void(^CompletionBlock)(CSVideoFrameModel *model);
     VTSessionSetProperty(self.compressionSession, kVTCompressionPropertyKey_RealTime, kCFBooleanTrue);
     
     // 5.设置期望帧率(每秒多少帧,如果帧率过低,会造成画面卡顿)
-    int fps = 15;
+    int fps = 20;
     CFNumberRef  fpsRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &fps);
     VTSessionSetProperty(self.compressionSession, kVTCompressionPropertyKey_ExpectedFrameRate, fpsRef);
     VTSessionSetProperty(self.compressionSession, kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration, (__bridge CFTypeRef)@(16));

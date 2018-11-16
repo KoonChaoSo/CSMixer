@@ -11,11 +11,12 @@
 #import "CSVideoEncoder.h"
 #import "CSRtmpPushManager.h"
 #import "CSAacAudioEncoder.h"
-#import "CSMixerCollector.h"
+#import "CSMixerAVFoundationCollector.h"
+#import "CSMixerGPUImageCollector.h"
 
 
 static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room";
-@interface ViewController ()<CSMixerCollectorDelegate>
+@interface ViewController ()<CSMixerCollectorDelegate,CSMixerGPUImageCollectorDelegate>
 {
     NSInteger frameCount;
 }
@@ -39,7 +40,10 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 @property (strong, nonatomic) AVCaptureConnection *videoConnection;
 @property (strong, nonatomic) AVCaptureConnection *audioConnection;
 
-@property (strong, nonatomic) CSMixerCollector *collector;
+//@property (strong, nonatomic) CSMixerAVFoundationCollector *collector;
+//@property (strong, nonatomic) CSMixerGPUImageCollector *gpuImageCollector;
+
+@property (strong, nonatomic) id<CSMixerCollectorProtocol> collector;
 @end
 
 #define NOW (CACurrentMediaTime()*1000)
@@ -61,7 +65,8 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
     _isFirstFrame = YES;
     _button = button;
     
-    self.collector.delegate = self;
+    self.collector = [[CSMixerGPUImageCollector alloc] initWithDelegate:self];
+    
 }
 
 
@@ -71,6 +76,40 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 }
 
 - (void)csColletorOutput:(id)outputColletor didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(CSMixerCaptureType)connection
+{
+    if (connection == CSMixerCaptureVideoType)
+    {
+        [self.encoder encodeSampleBuffer:sampleBuffer timeStamp:self.currentTimestamp completionBlock:^(CSVideoFrameModel *model) {
+            [[CSRtmpPushManager getInstance] sendVideo:model];
+        }];
+    }
+    else
+    {
+        [self.audioEncoder encodeSampleBuffer:sampleBuffer completionBlock:^(CSAudioFrameModel *model) {
+            [[CSRtmpPushManager getInstance] sendAudio:model];
+        }];
+    }
+}
+
+//- (void)csColletorOutput:(id)outputColletor didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(CSMixerCaptureType)connection
+//{
+//    if (connection == CSMixerCaptureVideoType)
+//    {
+//        [self.encoder encodeSampleBuffer:sampleBuffer timeStamp:self.currentTimestamp completionBlock:^(CSVideoFrameModel *model) {
+//            [[CSRtmpPushManager getInstance] sendVideo:model];
+//        }];
+//    }
+//    else
+//    {
+//        [self.audioEncoder encodeSampleBuffer:sampleBuffer completionBlock:^(CSAudioFrameModel *model) {
+//            [[CSRtmpPushManager getInstance] sendAudio:model];
+//        }];
+//    }
+//}
+
+- (void)csGPUImageColletorOutput:(CSMixerGPUImageCollector *)outputColletor
+           didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+                  fromConnection:(CSMixerCaptureType)connection
 {
     if (connection == CSMixerCaptureVideoType)
     {
@@ -159,12 +198,21 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 }
 
 
-- (CSMixerCollector *)collector
-{
-    if (!_collector)
-    {
-        _collector = [[CSMixerCollector alloc] init];
-    }
-    return _collector;
-}
+//- (CSMixerAVFoundationCollector *)collector
+//{
+//    if (!_collector)
+//    {
+//        _collector = [[CSMixerAVFoundationCollector alloc] init];
+//    }
+//    return _collector;
+//}
+//
+//- (CSMixerGPUImageCollector *)gpuImageCollector
+//{
+//    if (!_gpuImageCollector)
+//    {
+//        _gpuImageCollector = [[CSMixerGPUImageCollector alloc] init];
+//    }
+//    return _gpuImageCollector;
+//}
 @end
