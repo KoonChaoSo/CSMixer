@@ -19,7 +19,7 @@
 
 @end
 
-@interface CSMixerGPUImageCollector <CSMixerCollectorProtocol>: NSObject
+@interface CSMixerGPUImageCollector<CSMixerCollectorDelegate> : NSObject
 @property (weak, nonatomic) id<CSMixerGPUImageCollectorDelegate> delegate;
 
 - (instancetype)initWithDelegate:(id<CSMixerGPUImageCollectorDelegate>)delegate;
