@@ -281,7 +281,7 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
                                                           (__bridge_retained void *)timeNumber,
                                                           &flags);
     if (statusCode == noErr) {
-        NSLog(@"H264: VTCompressionSessionEncodeFrame Success");
+//        NSLog(@"H264: VTCompressionSessionEncodeFrame Success");
     }
 }
 @end

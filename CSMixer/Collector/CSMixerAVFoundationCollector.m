@@ -9,7 +9,7 @@
 #import "CSMixerAVFoundationCollector.h"
 
 
-@interface CSMixerAVFoundationCollector()<AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureAudioDataOutputSampleBufferDelegate>
+@interface CSMixerAVFoundationCollector()<AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureAudioDataOutputSampleBufferDelegate,CSMixerCollectorProtocol>
 @property (weak, nonatomic) UIView *preview;
 @property (strong, nonatomic) CALayer *prelayer;
 
@@ -30,12 +30,13 @@
 @end
 @implementation CSMixerAVFoundationCollector
 
-- (instancetype)initWithDelegate:(id<CSMixerCollectorProtocol>)delegate
+- (instancetype)initWithDelegate:(id<CSMixerCaptureDelegate>)delegate
 {
     self = [super init];
     if (self)
     {
         _delegate = delegate;
+        [self setup];
     }
     return self;;
 }
@@ -45,10 +46,15 @@
     self = [super init];
     if (self)
     {
-        _captureQueue = dispatch_queue_create("com.csmixer.videocapture.queue", DISPATCH_QUEUE_SERIAL);
-        _audioQueue = dispatch_queue_create("com.csmixer.audiocapture.queue", DISPATCH_QUEUE_SERIAL);
+        [self setup];
     }
     return self;
+}
+
+- (void)setup
+{
+    _captureQueue = dispatch_queue_create("com.csmixer.videocapture.queue", DISPATCH_QUEUE_SERIAL);
+    _audioQueue = dispatch_queue_create("com.csmixer.audiocapture.queue", DISPATCH_QUEUE_SERIAL);
 }
 
 #pragma mark - Public
@@ -73,6 +79,7 @@
     }
     
     AVCaptureVideoDataOutput *videoOutput = [[AVCaptureVideoDataOutput alloc] init];
+    videoOutput.videoSettings = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] forKey:(id)kCVPixelBufferPixelFormatTypeKey];
     [videoOutput setSampleBufferDelegate:self queue:self.captureQueue];
     
     if ([self.session canAddOutput:videoOutput])

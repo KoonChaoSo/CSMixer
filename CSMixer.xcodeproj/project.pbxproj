@@ -19,6 +19,7 @@
 		A1570F7A219BC0E3009819E1 /* CSVideoFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1570F79219BC0E3009819E1 /* CSVideoFrameModel.m */; };
 		A1570F7D219BC24F009819E1 /* CSAudioFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1570F7C219BC24F009819E1 /* CSAudioFrameModel.m */; };
 		A199522F219EB9C5000BF205 /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A199522D219EB9C4000BF205 /* GPUImageBeautifyFilter.m */; };
+		A1995233219ED6AB000BF205 /* LFGPUImageBeautyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A1995231219ED6AB000BF205 /* LFGPUImageBeautyFilter.m */; };
 		D80BD4D0213D7FF70029FCFC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */; };
 		D858FA962108D3A1002EA718 /* CSVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D858FA952108D3A1002EA718 /* CSVideoEncoder.m */; };
 		D858FA992108D4E9002EA718 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D858FA982108D4E9002EA718 /* VideoToolbox.framework */; };
@@ -64,6 +65,8 @@
 		A1570F7C219BC24F009819E1 /* CSAudioFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAudioFrameModel.m; sourceTree = "<group>"; };
 		A199522D219EB9C4000BF205 /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		A199522E219EB9C5000BF205 /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
+		A1995231219ED6AB000BF205 /* LFGPUImageBeautyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFGPUImageBeautyFilter.m; sourceTree = "<group>"; };
+		A1995232219ED6AB000BF205 /* LFGPUImageBeautyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageBeautyFilter.h; sourceTree = "<group>"; };
 		D80BD4CF213D7FF70029FCFC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D858FA942108D3A1002EA718 /* CSVideoEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVideoEncoder.h; sourceTree = "<group>"; };
 		D858FA952108D3A1002EA718 /* CSVideoEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVideoEncoder.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 		A134F202219C09B500111C10 /* Collector */ = {
 			isa = PBXGroup;
 			children = (
+				A1995232219ED6AB000BF205 /* LFGPUImageBeautyFilter.h */,
+				A1995231219ED6AB000BF205 /* LFGPUImageBeautyFilter.m */,
 				A199522E219EB9C5000BF205 /* GPUImageBeautifyFilter.h */,
 				A199522D219EB9C4000BF205 /* GPUImageBeautifyFilter.m */,
 				A142946D219E639100261174 /* CSMixerAVFoundationCollector.h */,
@@ -125,7 +130,7 @@
 			path = Collector;
 			sourceTree = "<group>";
 		};
-		A134F203219C09C400111C10 /* Encoder */ = {
+		A134F203219C09C400111C10 /* Coder */ = {
 			isa = PBXGroup;
 			children = (
 				D858FA942108D3A1002EA718 /* CSVideoEncoder.h */,
@@ -133,7 +138,7 @@
 				D89F8E0A218B513700778D5B /* CSAacAudioEncoder.h */,
 				D89F8E09218B513700778D5B /* CSAacAudioEncoder.m */,
 			);
-			path = Encoder;
+			path = Coder;
 			sourceTree = "<group>";
 		};
 		A134F204219C09E800111C10 /* Push */ = {
@@ -227,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				A134F204219C09E800111C10 /* Push */,
-				A134F203219C09C400111C10 /* Encoder */,
+				A134F203219C09C400111C10 /* Coder */,
 				A134F202219C09B500111C10 /* Collector */,
 				A1570F77219BC0C0009819E1 /* Model */,
 				D86A12B4211890BC00B3D35C /* RTMPLib */,
@@ -371,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1995233219ED6AB000BF205 /* LFGPUImageBeautyFilter.m in Sources */,
 				A1570F7D219BC24F009819E1 /* CSAudioFrameModel.m in Sources */,
 				D8E5380F21076F4100B6AB9D /* ViewController.m in Sources */,
 				A1429471219EAE8100261174 /* CSMixerGPUImageCarmera.m in Sources */,

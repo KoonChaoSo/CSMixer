@@ -14,17 +14,18 @@
 
 
 @class CSMixerAVFoundationCollector;
-@protocol CSMixerCollectorDelegate <NSObject>
+@protocol CSMixerCaptureDelegate <NSObject>
 
-- (void)csColletorOutput:(CSMixerAVFoundationCollector *)outputColletor
+- (void)csColletorOutput:(id<CSMixerCollectorProtocol>)outputColletor
    didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
           fromConnection:(CSMixerCaptureType)connection;
 
 @end
 
-@interface CSMixerAVFoundationCollector<CSMixerCollectorProtocol> : NSObject
-@property (weak, nonatomic) id<CSMixerCollectorDelegate> delegate;
-- (instancetype)initWithDelegate:(id<CSMixerCollectorProtocol>)delegate;
+@interface CSMixerAVFoundationCollector : NSObject
+@property (weak, nonatomic) id<CSMixerCaptureDelegate> delegate;
+
+- (instancetype)initWithDelegate:(id<CSMixerCaptureDelegate>)delegate;
 - (void)startCapture:(UIView *)preview;
 - (void)stopCapture;
 @end

@@ -9,7 +9,9 @@
 #import "CSMixerGPUImageCollector.h"
 #import "CSMixerGPUImageCarmera.h"
 #import "GPUImageBeautifyFilter.h"
-@interface CSMixerGPUImageCollector()<CSMixerGPUImageCarmeraDelegate>
+#import "LFGPUImageBeautyFilter.h"
+
+@interface CSMixerGPUImageCollector()<CSMixerCollectorProtocol,CSMixerGPUImageCarmeraDelegate>
 {
     dispatch_queue_t captureQueue;
     dispatch_queue_t audioQueue;
@@ -22,7 +24,7 @@
 @implementation CSMixerGPUImageCollector
 
 
-- (instancetype)initWithDelegate:(id<CSMixerGPUImageCollectorDelegate>)delegate
+- (instancetype)initWithDelegate:(id<CSMixerCaptureDelegate>)delegate
 {
     self = [self init];
     if (self)
@@ -55,13 +57,13 @@
 {
     self.myGPUImageView = [[GPUImageView alloc] initWithFrame:preview.bounds];
     self.myGPUImageView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
-    [self.myGPUImageView setInputRotation:kGPUImageFlipHorizonal atIndex:0];
+    [self.myGPUImageView setInputRotation:kGPUImageNoRotation atIndex:0];
     [preview addSubview:self.myGPUImageView];
     [self.myGPUVideoCamera addTarget:self.myGPUImageView];
     [self setBeautyFace];
     if (self.myGPUVideoCamera.connection.isVideoMirroringSupported)
     {
-        self.myGPUVideoCamera.connection.videoMirrored = NO;
+        self.myGPUVideoCamera.connection.videoMirrored = YES;
     }
     [self.myGPUVideoCamera.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     [self.myGPUVideoCamera startCameraCapture];
@@ -80,34 +82,37 @@
 {
 //    GPUImageBrightnessFilter *filter = [[GPUImageBrightnessFilter alloc] init];
 //    filter.brightness = 0.1;
-    GPUImageBeautifyFilter *filter = [[GPUImageBeautifyFilter alloc] init];
+    LFGPUImageBeautyFilter *filter = [[LFGPUImageBeautyFilter alloc] init];
+    filter.toneLevel = 0.8;
+    filter.beautyLevel = 0.8;
+    filter.brightLevel = 0.6;
     [_myGPUVideoCamera addTarget:filter];
 }
 
 
 #pragma mark - GPUImageVideoCameraDelegate
-- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
-{
-    if ([self.delegate respondsToSelector:@selector(csGPUImageColletorOutput:didOutputSampleBuffer:fromConnection:)])
-    {
-        [self.delegate csGPUImageColletorOutput:self didOutputSampleBuffer:sampleBuffer fromConnection:CSMixerCaptureVideoType];
-    }
-}
+//- (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+//{
+//    if ([self.delegate respondsToSelector:@selector(csGPUImageColletorOutput:didOutputSampleBuffer:fromConnection:)])
+//    {
+//        [self.delegate csGPUImageColletorOutput:self didOutputSampleBuffer:sampleBuffer fromConnection:CSMixerCaptureVideoType];
+//    }
+//}
 
 - (void)myCaptureOutput:(CSMixerGPUImageCarmera *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer type:(CSMixerCaptureType)type
 {
     if (type == CSMixerCaptureVideoType)
     {        
-        if ([self.delegate respondsToSelector:@selector(csGPUImageColletorOutput:didOutputSampleBuffer:fromConnection:)])
+        if ([self.delegate respondsToSelector:@selector(csColletorOutput:didOutputSampleBuffer:fromConnection:)])
         {
-            [self.delegate csGPUImageColletorOutput:self didOutputSampleBuffer:sampleBuffer fromConnection:CSMixerCaptureVideoType];
+            [self.delegate csColletorOutput:self didOutputSampleBuffer:sampleBuffer fromConnection:CSMixerCaptureVideoType];
         }
     }
     else
     {
-        if ([self.delegate respondsToSelector:@selector(csGPUImageColletorOutput:didOutputSampleBuffer:fromConnection:)])
+        if ([self.delegate respondsToSelector:@selector(csColletorOutput:didOutputSampleBuffer:fromConnection:)])
         {
-            [self.delegate csGPUImageColletorOutput:self didOutputSampleBuffer:sampleBuffer fromConnection:CSMixerCaptureAudioType];
+            [self.delegate csColletorOutput:self didOutputSampleBuffer:sampleBuffer fromConnection:CSMixerCaptureAudioType];
         }
     }
 }

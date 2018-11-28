@@ -11,17 +11,17 @@
 #import "CSMixerCollectorProtocol.h"
 
 @class CSMixerGPUImageCollector;
-@protocol CSMixerGPUImageCollectorDelegate <NSObject>
+@protocol CSMixerCaptureDelegate <NSObject>
 
-- (void)csGPUImageColletorOutput:(CSMixerGPUImageCollector *)outputColletor
-           didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
-                  fromConnection:(CSMixerCaptureType)connection;
+- (void)csColletorOutput:(id<CSMixerCollectorProtocol>)outputColletor
+   didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+          fromConnection:(CSMixerCaptureType)connection;
 
 @end
 
-@interface CSMixerGPUImageCollector <CSMixerCollectorProtocol>: NSObject
-@property (weak, nonatomic) id<CSMixerGPUImageCollectorDelegate> delegate;
+@interface CSMixerGPUImageCollector : NSObject
+@property (weak, nonatomic) id<CSMixerCaptureDelegate> delegate;
 
-- (instancetype)initWithDelegate:(id<CSMixerGPUImageCollectorDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<CSMixerCaptureDelegate>)delegate;
 @end
 

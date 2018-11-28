@@ -16,7 +16,7 @@
 
 
 static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room";
-@interface ViewController ()<CSMixerCollectorDelegate,CSMixerGPUImageCollectorDelegate>
+@interface ViewController ()<CSMixerCaptureDelegate>
 {
     NSInteger frameCount;
 }
@@ -75,21 +75,21 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 
 }
 
-- (void)csColletorOutput:(id)outputColletor didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(CSMixerCaptureType)connection
-{
-    if (connection == CSMixerCaptureVideoType)
-    {
-        [self.encoder encodeSampleBuffer:sampleBuffer timeStamp:self.currentTimestamp completionBlock:^(CSVideoFrameModel *model) {
-            [[CSRtmpPushManager getInstance] sendVideo:model];
-        }];
-    }
-    else
-    {
-        [self.audioEncoder encodeSampleBuffer:sampleBuffer completionBlock:^(CSAudioFrameModel *model) {
-            [[CSRtmpPushManager getInstance] sendAudio:model];
-        }];
-    }
-}
+//- (void)csColletorOutput:(id)outputColletor didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(CSMixerCaptureType)connection
+//{
+//    if (connection == CSMixerCaptureVideoType)
+//    {
+//        [self.encoder encodeSampleBuffer:sampleBuffer timeStamp:self.currentTimestamp completionBlock:^(CSVideoFrameModel *model) {
+//            [[CSRtmpPushManager getInstance] sendVideo:model];
+//        }];
+//    }
+//    else
+//    {
+//        [self.audioEncoder encodeSampleBuffer:sampleBuffer completionBlock:^(CSAudioFrameModel *model) {
+//            [[CSRtmpPushManager getInstance] sendAudio:model];
+//        }];
+//    }
+//}
 
 //- (void)csColletorOutput:(id)outputColletor didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(CSMixerCaptureType)connection
 //{
@@ -107,9 +107,9 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 //    }
 //}
 
-- (void)csGPUImageColletorOutput:(CSMixerGPUImageCollector *)outputColletor
-           didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
-                  fromConnection:(CSMixerCaptureType)connection
+- (void)csColletorOutput:(id<CSMixerCollectorProtocol>)outputColletor
+   didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
+          fromConnection:(CSMixerCaptureType)connection
 {
     if (connection == CSMixerCaptureVideoType)
     {
