@@ -44,6 +44,7 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 //@property (strong, nonatomic) CSMixerGPUImageCollector *gpuImageCollector;
 
 @property (strong, nonatomic) id<CSMixerCollectorProtocol> collector;
+@property (strong, nonatomic) UIView *showView;
 @end
 
 #define NOW (CACurrentMediaTime()*1000)
@@ -53,6 +54,15 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    UIView *showView = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:showView];
+    _showView = showView;
+    
+    UIView *operationView = [[UIView alloc] initWithFrame:self.view.bounds];
+    [operationView setBackgroundColor:[UIColor clearColor]];
+    [self.view addSubview:operationView];
+    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 50, 100, 100)];
     if (self.isLive)
         [button setTitle:@"停止直播" forState:0];
@@ -61,7 +71,7 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
     
     [button setBackgroundColor:[UIColor blackColor]];
     [button addTarget:self action:@selector(onClickButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    [operationView addSubview:button];
     _isFirstFrame = YES;
     _button = button;
     
@@ -148,7 +158,7 @@ static  NSString *const kPushRtmpUrl = @"rtmp://192.168.147.216:1935/myapp/room"
     {
         if ([[CSRtmpPushManager getInstance] startRtmpConnect:kPushRtmpUrl])
         {
-            [self.collector startCapture:self.view];
+            [self.collector startCapture:self.showView];
         }
     }
     else
